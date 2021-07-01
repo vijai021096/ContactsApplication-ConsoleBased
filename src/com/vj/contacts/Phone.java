@@ -79,6 +79,60 @@ public class Phone {
 	}
 
 	/**
+	 * Delete contact by name
+	 * 
+	 * @param name
+	 */
+	public void deleteContact(String name) {
+		int flag=0;
+		for(int i=0;i<contactList.size();i++) {
+			if(contactList.get(i).getContactName().equals(name)) {
+				contactList.remove(i);
+				flag=1;
+				System.out.println("Contact deleted");
+				break;
+			}
+		}
+		if(flag==0) {
+			System.out.println("No Contacts found with the given Name");
+		}	
+	}
+	/**
+	 * Update Contact Num.
+	 * @param name
+	 * @param num
+	 */
+	public void updateContactNum(String name,long num) {
+		int flag=0;
+		for(int i=0;i<contactList.size();i++) {
+			if(contactList.get(i).getContactName().equals(name)) {
+				contactList.get(i).setPhoneNum(num);
+				flag=1;
+				System.out.println("Contact Updated");
+			}
+	
+	}
+		if(flag==0) {
+			System.out.println("No Contacts FOund with given name");
+		}
+	}
+	
+	public void updateContactName(String oldName,String newName) {
+		int flag=0;
+		for(int i=0;i<contactList.size();i++) {
+			if(contactList.get(i).getContactName().equals(oldName)) {
+				contactList.get(i).setContactName(newName);
+				flag=1;
+				System.out.println("Contact Updated");
+			}
+	
+	}
+		if(flag==0) {
+			System.out.println("No Contacts FOund with given name");
+		}
+	
+	}
+	/**
 	 * Print contacts
 	 * 
 	 * @param contactList
